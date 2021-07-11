@@ -1,0 +1,233 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Light-Grayish-Blue);
+    gap: 5em;
+}
+
+.card{
+    background-color: #fff;
+    min-width: 305px;
+    width: 40%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.drawer-img{
+    display: block;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-content{
+    text-align: center;
+    padding: 2em 4em;
+}
+
+.card-heading{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.card-paragraph{
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    padding-bottom: 1em;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.profile-content{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    padding: 1em 0 2em 4em;
+    width: 100%;
+}
+
+.profile-picture{
+    border-radius: 100%;
+    width: 35px;
+    object-fit: cover;
+}
+
+.profile-details{
+    line-height: 1.5;
+}
+
+.profile-name{
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.profile-date{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.tooltip{
+    display: flex;
+    align-items: center;
+    padding:0 4em;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    position: absolute;
+    transform: translateX(-102%);
+    opacity: 0;
+    transition: transform 500ms ease,
+                opacity 500ms ease;
+    height: 100%;
+    width: 100%;
+    fill: #fff;
+}
+
+.tools{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.expand{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.social-icon:hover{
+    fill: var(--Desaturated-Dark-Blue);
+    cursor: pointer;
+}
+
+.share{
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: .1rem;
+    color: #fff;
+}
+
+.share-button{
+    display: grid;
+    place-items: center;
+    padding: .65em;
+    border-radius: 100%;
+    background-color: var(--Desaturated-Dark-Blue);
+    position: absolute;
+    right: 4em;
+    fill: var(--Very-Dark-Grayish-Blue);
+    cursor: pointer;
+    transform: rotate(0);
+    transition: transform 350ms ease;
+    fill: #fff;
+}
+
+.share-button:hover{
+    background-color: var(--Grayish-Blue);
+    fill: #fff;
+}
+
+.active{
+    background-color: var(--Grayish-Blue);
+    fill: #fff;
+    transform: rotate(150deg);
+}
+
+
+@media screen and (min-width: 1150px){
+
+    .card{
+        display: flex;
+        width: 45%;
+    }
+
+    .drawer-img{
+        height: 100%;
+    }
+
+    .card-content{
+        text-align: left;
+    }
+
+    .card-paragraph{
+        padding-top: 1em;
+    }
+
+    .right-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .tooltip{
+        padding:1.8em 2em;
+        transform: translatey(0%);
+        height: 50%;
+        width: 50%;
+        fill: #fff;
+        right: 1.3rem;
+        border-radius: .5rem;
+    }
+
+    .tooltip::after{
+        content: "";
+        width: 12.5px;
+        height: 12.5px;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        position: inherit;
+        top: 75%;
+        right: 3.5rem;
+        transform: rotate(45deg);
+    }
+    
+    .tools{
+        width: 100%;
+    }
+
+    .expand{
+        transform: translatey(-130%);
+        opacity: 1;
+    }
+
+    .active{
+        transform: rotate(230deg);
+    }
+
+}
+
+
+
+
+
+
+
